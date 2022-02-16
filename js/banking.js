@@ -34,6 +34,13 @@ document.getElementById('deposit-button').addEventListener('click', function () 
     const previousWithdrawTotal = parseFloat(previousWithdrawTotalText);
     withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
 
+    // update balance after withdraw
+    const balanceTotal = document.getElementById('balance-total');
+    const balanceAmountText = balanceTotal.innerText;
+    const balanceAmount = parseFloat(balanceAmountText);
+
+    balanceTotal.innerText = balanceAmount - withdrawAmount;
+
     // clear withdraw input field
     withdrawInput.value = '';
   });
